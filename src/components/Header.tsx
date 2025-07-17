@@ -10,6 +10,7 @@ const Header = () => {
     { label: 'Home', href: '#home' },
     { label: 'Services', href: '#services' },
     { label: 'Plans', href: '#plans' },
+    { label: 'Projects', href: '#projects' },
     { label: 'Demo', href: '/demo' },
     { label: 'Contact', href: '#contact' },
   ];
@@ -21,7 +22,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">IA</span>
+              <span className="text-primary-foreground font-bold text-sm">AI</span>
             </div>
             <span className="font-heading font-bold text-xl text-foreground">AI Studio</span>
           </div>

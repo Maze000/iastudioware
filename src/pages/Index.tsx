@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import SplitSection from '@/components/SplitSection';
 import ServicesGrid from '@/components/ServicesGrid';
 import PricingPlans from '@/components/PricingPlans';
+import Portfolio from '@/components/Portfolio';
 import ContactForm from '@/components/ContactForm';
 import Benefits from '@/components/Benefits';
 import Testimonials from '@/components/Testimonials';
@@ -17,6 +18,7 @@ const Index = () => {
       <SplitSection />
       <ServicesGrid />
       <PricingPlans />
+      <Portfolio />
       <ContactForm />
       <Benefits />
       <Testimonials />

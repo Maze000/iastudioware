@@ -33,7 +33,7 @@ const Footer = () => {
               <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">IA</span>
               </div>
-              <span className="font-heading font-bold text-xl">Estudio IA</span>
+              <span className="font-heading font-bold text-xl">AI Studio</span>
             </div>
             
             <p className="text-white/70 mb-6 max-w-md">
@@ -97,7 +97,7 @@ const Footer = () => {
             {/* Contact Info */}
             <div className="mt-6 space-y-2">
               <p className="text-white/70 text-sm">
-                <strong>Email:</strong> hello@estudioIA.com
+                <strong>Email:</strong> hello@aiStudio.com
               </p>
               <p className="text-white/70 text-sm">
                 <strong>Phone:</strong> +52 (55) 1234-5678

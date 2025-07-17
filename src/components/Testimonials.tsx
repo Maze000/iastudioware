@@ -7,7 +7,7 @@ const Testimonials = () => {
       company: 'TechStart Solutions',
       role: 'CEO',
       image: '/maria-gonzalez.jpg',
-      quote: 'Estudio IA transformed our sales process completely. Our lead conversion increased by 340% in just 3 months.',
+      quote: 'AI Studio transformed our sales process completely. Our lead conversion increased by 340% in just 3 months.',
       rating: 5
     },
     {
@@ -39,7 +39,7 @@ const Testimonials = () => {
             </span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Real results from businesses that chose to digitize with Estudio IA
+            Real results from businesses that chose to digitize with AI Studio
           </p>
         </div>
 
