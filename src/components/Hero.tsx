@@ -4,7 +4,7 @@ import heroImage from '@/assets/hero-automation.jpg';
 import { Link } from 'react-router-dom';
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-gradient-dark overflow-hidden mt-[30px] md:mt-0">
+    <section id="home" className="relative min-h-screen flex items-center bg-gradient-dark overflow-hidden mt-[0px] md:mt-0">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-dark-accent">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/5"></div>
@@ -12,7 +12,7 @@ const Hero = () => {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10 mt-[40px] md:mt-0">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left">
