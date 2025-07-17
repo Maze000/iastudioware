@@ -111,7 +111,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
             <div className="text-white/60 text-sm">
-              © 2024 Estudio IA. All rights reserved. Made with ❤️ for growing businesses.
+              © 2024 AI Studio. All rights reserved.
             </div>
 
             {/* Social Links */}

@@ -151,6 +151,11 @@ const ContactForm = () => {
                     </>
                   )}
                 </Button>
+<div className="flex flex-col justify-center" style={{ minHeight: '120px' }}>
+  <div className="mt-12 text-sm text-muted-foreground text-center border border-border rounded-xl p-4">
+    Our team will review your request and get in touch within 24 hours. Let us help you kickstart your digital transformation!
+  </div>
+</div>
               </form>
             </div>
 

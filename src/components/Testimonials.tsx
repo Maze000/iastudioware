@@ -3,15 +3,15 @@ import { Star } from 'lucide-react';
 const Testimonials = () => {
   const testimonials = [
     {
-      name: 'María González',
+      name: 'Emily Smith',
       company: 'TechStart Solutions',
       role: 'CEO',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b5bb?w=120&h=120&fit=crop&crop=face',
+      image: '/maria-gonzalez.jpg',
       quote: 'Estudio IA transformed our sales process completely. Our lead conversion increased by 340% in just 3 months.',
       rating: 5
     },
     {
-      name: 'Carlos Mendoza',
+      name: 'John Davies',
       company: 'Urban Retail Group',
       role: 'Operations Director',
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&crop=face',
@@ -19,7 +19,7 @@ const Testimonials = () => {
       rating: 5
     },
     {
-      name: 'Ana Ruiz',
+      name: 'Jennifer Wilson',
       company: 'Creative Agency Plus',
       role: 'Founder',
       image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&h=120&fit=crop&crop=face',
@@ -86,18 +86,18 @@ const Testimonials = () => {
           
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
             {/* Mock Company Logos */}
-            <div className="bg-muted rounded-lg px-6 py-3 text-sm font-medium text-muted-foreground">
-              TechStart Solutions
-            </div>
-            <div className="bg-muted rounded-lg px-6 py-3 text-sm font-medium text-muted-foreground">
-              Urban Retail Group
-            </div>
-            <div className="bg-muted rounded-lg px-6 py-3 text-sm font-medium text-muted-foreground">
-              Creative Agency Plus
-            </div>
-            <div className="bg-muted rounded-lg px-6 py-3 text-sm font-medium text-muted-foreground">
-              Digital Marketing Pro
-            </div>
+            <div className="bg-muted rounded-lg px-6 py-3 text-sm font-medium" style={{ color: 'rgb(66, 92, 190)' }}>
+               TechStart Solutions
+             </div>
+            <div className="bg-muted rounded-lg px-6 py-3 text-sm font-medium" style={{ color: 'rgb(66, 92, 190)' }}>
+               Urban Retail Group
+             </div>
+            <div className="bg-muted rounded-lg px-6 py-3 text-sm font-medium" style={{ color: 'rgb(66, 92, 190)' }}>
+               Creative Agency Plus
+             </div>
+            <div className="bg-muted rounded-lg px-6 py-3 text-sm font-medium" style={{ color: 'rgb(66, 92, 190)' }}>
+               Digital Marketing Pro
+             </div>
           </div>
         </div>
       </div>

@@ -9,7 +9,8 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Estudio IA Brand Colors */
-    --background: 248 250 252; /* #F8FAFC - Light background */
+    --background: linear-gradient(90deg, hsl(27 96% 53%) 0%, hsl(0 0% 30%) 100%); /* Naranja a gris */
+    --background-gradient: linear-gradient(60deg, #000000 10%, hsl(254, 50%, 12%) 60%); /* Gris oscuro a azul oscuro */
     --foreground: 15 23 42; /* #0F172A - Main text (Slate 900) */
 
     --card: 0 0% 100%; /* #FFFFFF - Card background */
@@ -121,7 +122,8 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    background: var(--background-gradient);
+    color: hsl(var(--foreground));
   }
 
   html {

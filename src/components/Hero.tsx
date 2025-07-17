@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
 import heroImage from '@/assets/hero-automation.jpg';
-
+import { Link } from 'react-router-dom';
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center bg-gradient-dark overflow-hidden">
@@ -29,11 +29,14 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              
+              <Link to="/demo">
               <Button size="lg" className="bg-primary hover:bg-primary-hover text-primary-foreground font-medium group">
                 Start Now
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              
+              </Link>
+             
               <Button 
                 size="lg" 
                 variant="outline" 

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,7 +10,7 @@ const Header = () => {
     { label: 'Home', href: '#home' },
     { label: 'Services', href: '#services' },
     { label: 'Plans', href: '#plans' },
-    { label: 'Demo', href: '#demo' },
+    { label: 'Demo', href: '/demo' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -22,7 +23,7 @@ const Header = () => {
             <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-sm">IA</span>
             </div>
-            <span className="font-heading font-bold text-xl text-foreground">Estudio IA</span>
+            <span className="font-heading font-bold text-xl text-foreground">AI Studio</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -31,7 +32,7 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+                className="text-[#23272f] hover:text-foreground transition-colors font-medium"
               >
                 {item.label}
               </a>
@@ -40,9 +41,11 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-medium">
-              Request Demo
-            </Button>
+            <Link to="/demo">
+              <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-medium">
+                Request Demo
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -62,15 +65,17 @@ const Header = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+                  className="text-[#23272f] hover:text-foreground transition-colors font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
-              <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-medium w-fit">
-                Request Demo
-              </Button>
+              <Link to="/demo">
+                <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-medium w-fit">
+                  Request Demo
+                </Button>
+              </Link>
             </nav>
           </div>
         )}

@@ -8,7 +8,7 @@ const PricingPlans = () => {
       title: 'Basic Plan',
       subtitle: 'Digital Presence',
       description: 'Perfect for getting started with a professional online presence',
-      price: '$800 – $2,500',
+      price: '$100 - $150 USD',
       popular: false,
       features: [
         'Professional landing page',
@@ -24,7 +24,7 @@ const PricingPlans = () => {
       title: 'Intermediate Plan',
       subtitle: 'Website + Automation',
       description: 'Scale your business with smart automations and integrations',
-      price: '$3,000 – $8,000',
+      price: '$160 - $200 USD',
       popular: true,
       features: [
         'Full website (5–10 pages)',
@@ -42,7 +42,7 @@ const PricingPlans = () => {
       title: 'Advanced Plan',
       subtitle: 'eCommerce + Apps + AI',
       description: 'Complete digital transformation with AI-powered solutions',
-      price: '$10,000 – $30,000+',
+      price: '$210 - $300 USD',
       popular: false,
       features: [
         'Full online store with cart & checkout',
@@ -60,7 +60,7 @@ const PricingPlans = () => {
       title: 'Monthly Plan',
       subtitle: 'Marketing & Support Retainer',
       description: 'Ongoing optimization and marketing support',
-      price: '$1,500 – $10,000/month',
+      price: '$320 - $450 USD',
       popular: false,
       features: [
         'Paid ads (Meta, Google, TikTok)',
@@ -79,11 +79,8 @@ const PricingPlans = () => {
     <section id="plans" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
-            Plans for every{' '}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              stage of growth
-            </span>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-white via-blue-500 to-orange-500 bg-clip-text text-transparent mb-6">
+            Plans for every stage of growth
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Start small and scale up. Every plan includes our commitment to quality, 
@@ -95,7 +92,7 @@ const PricingPlans = () => {
           {plans.map((plan, index) => (
             <div 
               key={index}
-              className={`relative bg-card rounded-2xl p-8 border transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1 ${
+              className={`relative bg-card rounded-2xl p-8 border transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1 flex flex-col ${
                 plan.popular ? 'border-primary shadow-elegant scale-105' : 'border-border'
               }`}
             >
@@ -142,7 +139,7 @@ const PricingPlans = () => {
               </ul>
 
               <Button 
-                className={`w-full ${
+                className={`w-full mt-auto ${
                   plan.popular 
                     ? 'bg-primary hover:bg-primary-hover text-primary-foreground' 
                     : 'bg-secondary hover:bg-secondary/90 text-secondary-foreground'
