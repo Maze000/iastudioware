@@ -3,6 +3,7 @@ import {
   Database, Calendar, Share2, FolderOpen, CheckSquare, Target,
   Brain, FileSignature, ScanLine, Headphones
 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const ServicesGrid = () => {
   const services = [
@@ -133,9 +134,11 @@ const ServicesGrid = () => {
           <p className="text-muted-foreground mb-4">
             Need a custom module? We build tailored solutions for unique business needs.
           </p>
-          <button className="text-primary hover:text-primary-hover font-medium hover:underline transition-colors">
-            Discuss Custom Solutions →
-          </button>
+          <a href="#contact">
+            <Button className="bg-primary hover:bg-primary-hover text-primary-foreground font-medium px-6 py-3 text-base">
+              Discuss Custom Solutions →
+            </Button>
+          </a>
         </div>
       </div>
     </section>
