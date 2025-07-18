@@ -54,7 +54,7 @@ const FinalCTA = () => {
              </Link>
             
             <a
-              href="https://t.me/aistudioaction"
+              href="https://t.me/aistudioware"
               target="_blank"
               rel="noopener noreferrer"
               style={{ textDecoration: 'none' }}
