@@ -34,9 +34,9 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">IA</span>
+                <span className="text-white font-bold text-sm">AI</span>
               </div>
-              <span className="font-heading font-bold text-xl">AI Studio</span>
+              <span className="font-heading font-bold text-xl">AI StudioWare</span>
             </div>
             
             <p className="text-white/70 mb-6 max-w-md">
