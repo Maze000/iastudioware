@@ -14,7 +14,7 @@ const ServicesGrid = () => {
     {
       icon: MessageCircle,
       title: 'Chatbots',
-      description: 'AI-powered customer service and lead generation bots'
+      description: 'AI-powered customer service and lead generation bots (WhatsApp & Telegram)'
     },
     {
       icon: Mail,

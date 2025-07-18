@@ -75,7 +75,7 @@ const Portfolio = () => {
       description: "Smart financial dashboard with investment recommendations and budget tracking.",
       image: project8,
       category: "Fintech",
-      technologies: ["AI", "Finanzas", "Analytics"]
+      technologies: ["AI", "Finance", "Analytics"]
     },
     {
       id: 9,
@@ -180,9 +180,11 @@ const Portfolio = () => {
           <p className="text-muted-foreground mb-6">
             Ready to digitize your business?
           </p>
-          <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors">
-            Request Free Consultation
-          </button>
+          <a href="#contact">
+            <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+              Request Free Consultation
+            </button>
+          </a>
         </div>
       </div>
     </section>

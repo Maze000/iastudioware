@@ -43,21 +43,30 @@ const FinalCTA = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary-hover text-primary-foreground font-medium px-8 py-4 text-lg group"
-            >
-              Request Your Demo Today
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <a href="/demo">
+              <Button 
+                size="lg" 
+                className="bg-primary hover:bg-primary-hover text-primary-foreground font-medium px-8 py-4 text-lg group"
+              >
+                Request Your Demo Today
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </a>
             
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-white/20 text-white hover:bg-white/10 hover:text-white font-medium px-8 py-4 text-lg"
+            <a
+              href="https://t.me/aistudioaction"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: 'none' }}
             >
-              Schedule a Call
-            </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-white/20 text-white hover:bg-white/10 hover:text-white font-medium px-8 py-4 text-lg"
+              >
+                Telegram
+              </Button>
+            </a>
           </div>
 
           {/* Urgency/Social Proof */}

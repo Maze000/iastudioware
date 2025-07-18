@@ -1,12 +1,15 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Facebook, Twitter, Instagram, Linkedin, Mail } from 'lucide-react';
+import { useState } from 'react';
 
 const Footer = () => {
   const quickLinks = [
     { label: 'Home', href: '#home' },
     { label: 'Services', href: '#services' },
     { label: 'Plans', href: '#plans' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Demo', href: '/demo' },
     { label: 'Contact', href: '#contact' }
   ];
 
@@ -44,17 +47,7 @@ const Footer = () => {
             {/* Newsletter Signup */}
             <div className="space-y-4">
               <h3 className="font-semibold text-lg">Stay Updated</h3>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
-                />
-                <Button className="bg-primary hover:bg-primary-hover text-primary-foreground">
-                  <Mail className="w-4 h-4 mr-2" />
-                  Subscribe
-                </Button>
-              </div>
+              <FooterSubscribeForm />
               <p className="text-xs text-white/50">
                 Get automation tips and industry insights delivered to your inbox.
               </p>
@@ -131,6 +124,67 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+  );
+};
+
+// Componente de suscripción para el footer
+const FooterSubscribeForm = () => {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'success' | 'error' | 'loading'>('idle');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      setMessage('Please enter a valid email.');
+      setStatus('error');
+      return;
+    }
+    setStatus('loading');
+    setMessage('');
+    try {
+      const res = await fetch('https://hook.us2.make.com/ar77g4bbi2sowu18iimo616v5jd2ty2l', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      if (res.ok) {
+        setStatus('success');
+        setMessage('You are subscribed!');
+        setEmail('');
+      } else {
+        setStatus('error');
+        setMessage('Subscription failed. Try again.');
+      }
+    } catch {
+      setStatus('error');
+      setMessage('Network error. Try again.');
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+      <Input
+        type="email"
+        placeholder="Enter your email"
+        className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+        disabled={status === 'loading'}
+        required
+      />
+      <Button
+        type="submit"
+        className="bg-primary hover:bg-primary-hover text-primary-foreground"
+        disabled={status === 'loading'}
+      >
+        <Mail className="w-4 h-4 mr-2" />
+        {status === 'loading' ? 'Sending...' : 'Subscribe'}
+      </Button>
+      {message && (
+        <div className={`text-xs mt-2 ${status === 'success' ? 'text-green-400' : 'text-red-400'}`}>{message}</div>
+      )}
+    </form>
   );
 };
 
