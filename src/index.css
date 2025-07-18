@@ -10,7 +10,7 @@ All colors MUST be HSL.
   :root {
     /* AI Studio Brand Colors */
     --background: linear-gradient(90deg, hsl(27 96% 53%) 0%, hsl(0 0% 30%) 100%); /* Naranja a gris */
-    --background-gradient: linear-gradient(60deg, #000000 10%, hsl(254, 50%, 12%) 60%); /* Gris oscuro a azul oscuro */
+    --background-gradient: linear-gradient(60deg, #323346 10%, hsl(255, 56%, 12%) 60%); /* Gris oscuro a azul oscuro */
     --foreground: 15 23 42; /* #0F172A - Main text (Slate 900) */
 
     --card: 0 0% 100%; /* #FFFFFF - Card background */
