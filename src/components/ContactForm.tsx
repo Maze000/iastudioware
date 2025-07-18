@@ -41,6 +41,7 @@ const ContactForm = () => {
         toast({
           title: "Message Sent!",
           description: "We'll get back to you within 24 hours.",
+          className: "bg-orange-500 bg-opacity-100 text-white"
         });
         setFormData({ name: '', email: '', projectType: '', message: '' });
       } else {
