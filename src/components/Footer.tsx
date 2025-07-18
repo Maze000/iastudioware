@@ -90,11 +90,9 @@ const Footer = () => {
             {/* Contact Info */}
             <div className="mt-6 space-y-2">
               <p className="text-white/70 text-sm">
-                <strong>Email:</strong> hello@aiStudio.com
+                <strong>Email:</strong> hello@aistudioware.com
               </p>
-              <p className="text-white/70 text-sm">
-                <strong>Phone:</strong> +52 (55) 1234-5678
-              </p>
+
             </div>
           </div>
         </div>
