@@ -14,14 +14,14 @@ const SplitSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mb-6">
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mb-6 text-center lg:text-left">
               We integrate with the{' '}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 tools you already use
               </span>
             </h2>
             
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-muted-foreground mb-8 text-center lg:text-left mx-auto">
               No need to change your workflow. Our modular automation system seamlessly connects 
               with your existing platforms, creating a unified digital ecosystem that grows with your business.
             </p>
