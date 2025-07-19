@@ -7,7 +7,7 @@ const Testimonials = () => {
       company: 'TechStart Solutions',
       role: 'CEO',
       image: '/maria-gonzalez.jpg',
-      quote: 'AI StudioWare transformed our sales process completely. Our lead conversion increased by 340% in just 3 months.',
+      quote: 'AI WareStudio transformed our sales process completely. Our lead conversion increased by 340% in just 3 months.',
       rating: 5
     },
     {

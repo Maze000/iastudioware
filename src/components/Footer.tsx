@@ -36,7 +36,7 @@ const Footer = () => {
               <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">AI</span>
               </div>
-              <span className="font-heading font-bold text-xl">AI StudioWare</span>
+              <span className="font-heading font-bold text-xl">AI WareStudio</span>
             </div>
             
             <p className="text-white/70 mb-6 max-w-md">
