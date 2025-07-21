@@ -1,7 +1,8 @@
-import { Check, Zap, Link, Users, BarChart3 } from 'lucide-react';
+import { Check, Zap, Link, Users, BarChart3, Globe } from 'lucide-react';
 
 const SplitSection = () => {
   const integrations = [
+    { icon: Globe, text: 'Create Smart Website Apps' },
     { icon: Link, text: 'Connect with existing CRM systems' },
     { icon: Zap, text: 'Automate workflows in minutes' },
     { icon: Users, text: 'Sync with team collaboration tools' },

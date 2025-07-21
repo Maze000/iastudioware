@@ -4,8 +4,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Send, MapPin, Phone, Mail, Clock, Upload } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import { Send } from 'lucide-react';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -76,76 +76,104 @@ const ContactForm = () => {
             <p className="text-lg text-muted-foreground">
               Tell us about your project and we'll create a custom automation solution for you.
             </p>
+            <p className="text-xl text-cyan-400 font-semibold mt-4">
+            Fill in the key details and we'll send you your automated smart website app within 24 hours. Free 7-day demo. 
+</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="bg-card rounded-2xl p-8 border shadow-card-hover">
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <Label htmlFor="name" className="text-foreground font-medium">
-                      Name *
-                    </Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      className="mt-2"
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  
-                  <div>
-                    <Label htmlFor="email" className="text-foreground font-medium">
-                      Email *
-                    </Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="mt-2"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                </div>
-
+                {/* Business Name */}
                 <div>
-                  <Label htmlFor="projectType" className="text-foreground font-medium">
-                    Project Type *
+                  <Label htmlFor="businessName" className="text-foreground font-medium">
+                    Business name
                   </Label>
-                  <Select value={formData.projectType} onValueChange={handleSelectChange}>
-                    <SelectTrigger className="mt-2">
-                      <SelectValue placeholder="Select your project type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="basic">Basic Website</SelectItem>
-                      <SelectItem value="intermediate">Website + Automation</SelectItem>
-                      <SelectItem value="advanced">eCommerce + AI Solutions</SelectItem>
-                      <SelectItem value="monthly">Monthly Support & Marketing</SelectItem>
-                      <SelectItem value="custom">Custom Solution</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <Input
+                    id="businessName"
+                    name="businessName"
+                    type="text"
+                    required
+                    className="mt-2"
+                    placeholder="Enter your business name"
+                  />
                 </div>
 
+                {/* Email */}
                 <div>
-                  <Label htmlFor="message" className="text-foreground font-medium">
-                    Project Details
+                  <Label htmlFor="email" className="text-foreground font-medium">
+                    Email
+                  </Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    className="mt-2"
+                    placeholder="your@email.com"
+                  />
+                </div>
+
+                {/* Description */}
+                <div>
+                  <Label htmlFor="description" className="text-foreground font-medium">
+                    Description of the product or service
                   </Label>
                   <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
+                    id="description"
+                    name="description"
                     className="mt-2 min-h-[120px]"
-                    placeholder="Tell us about your business goals, current challenges, and what you'd like to automate..."
+                    placeholder="Describe your product or service..."
                   />
+                </div>
+
+                {/* Logo Upload */}
+                <div>
+                  <Label htmlFor="logo" className="text-foreground font-medium">
+                    Logo upload
+                  </Label>
+                  <div className="mt-2 border-2 border-dashed border-border rounded-lg p-6 text-center hover:border-primary transition-colors">
+                    <Upload className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
+                    <p className="text-sm text-muted-foreground mb-2">Click to upload or drag and drop</p>
+                    <p className="text-xs text-muted-foreground">PNG, JPG, SVG up to 5MB</p>
+                    <input
+                      type="file"
+                      id="logo"
+                      name="logo"
+                      accept="image/*"
+                      className="hidden"
+                    />
+                    <label
+                      htmlFor="logo"
+                      className="inline-block mt-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg cursor-pointer hover:bg-primary/90 transition-colors"
+                    >
+                      Choose File
+                    </label>
+                  </div>
+                </div>
+
+                {/* Color Pickers */}
+                <div>
+                  <Label className="text-foreground font-medium mb-4 block">
+                    5 color pickers (choose up to 5 colors)
+                  </Label>
+                  <div className="grid grid-cols-5 gap-4">
+                    {[1, 2, 3, 4, 5].map((index) => (
+                      <div key={index} className="text-center">
+                        <label htmlFor={`color${index}`} className="block text-xs text-muted-foreground mb-2">
+                          Color {index}
+                        </label>
+                        <input
+                          type="color"
+                          id={`color${index}`}
+                          name={`color${index}`}
+                          className="w-full h-12 border border-border rounded-lg cursor-pointer bg-background"
+                          defaultValue={index === 1 ? '#3b82f6' : '#ffffff'}
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 <Button 
@@ -174,7 +202,7 @@ const ContactForm = () => {
             <div className="space-y-8">
               <div className="bg-card rounded-2xl p-8 border">
                 <h3 className="font-heading font-semibold text-xl text-foreground mb-4">
-                  Why Choose AI Studio?
+                  Why Choose AI WareStudio?
                 </h3>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start space-x-2">

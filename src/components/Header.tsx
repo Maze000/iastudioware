@@ -41,11 +41,11 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Link to="/demo">
+          <a href="#contact">
               <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-medium">
                 Request Demo
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
