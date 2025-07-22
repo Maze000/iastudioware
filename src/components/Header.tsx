@@ -71,7 +71,7 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <a href="#contact">
+              <a href="#contact" onClick={() => setIsMenuOpen(false)}>
                 <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-medium w-fit">
                   Request Demo
                 </Button>
