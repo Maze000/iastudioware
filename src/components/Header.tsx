@@ -71,11 +71,11 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <Link to="/demo">
+              <a href="#contact">
                 <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-medium w-fit">
                   Request Demo
                 </Button>
-              </Link>
+              </a>
             </nav>
           </div>
         )}
