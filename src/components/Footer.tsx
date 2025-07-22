@@ -90,7 +90,7 @@ const Footer = () => {
             {/* Contact Info */}
             <div className="mt-6 space-y-2">
               <p className="text-white/70 text-sm">
-                <strong>Email:</strong> hello@aistudioware.com
+                <strong>Email:</strong> hello@aiwarestudio.com
               </p>
 
             </div>
