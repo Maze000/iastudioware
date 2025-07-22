@@ -106,7 +106,7 @@ const ContactForm = () => {
               Tell us about your project and we'll create a custom automation solution for you.
             </p>
             <p className="text-xl text-cyan-400 font-semibold mt-4">
-              Fill in the key details and we'll send you your automated smart website app within 24 hours. Free 7-day demo. 
+              Fill in the key details and we'll send you your automated smart website app within 24 hours. Free 3-day demo. 
             </p>
           </div>
   
