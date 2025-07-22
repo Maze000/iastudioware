@@ -182,9 +182,13 @@ const ContactForm = () => {
                     />
                     <label
                       htmlFor="logo"
-                      className="inline-block mt-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg cursor-pointer hover:bg-primary/90 transition-colors"
+                      className={`inline-block mt-2 px-4 py-2 rounded-lg cursor-pointer transition-colors ${
+                        formData.logo 
+                          ? 'bg-green-500 hover:bg-green-600 text-white' 
+                          : 'bg-primary text-primary-foreground hover:bg-primary/90'
+                      }`}
                     >
-                      Choose File
+                      {formData.logo ? 'File Selected ✓' : 'Choose File'}
                     </label>
                   </div>
                 </div>
