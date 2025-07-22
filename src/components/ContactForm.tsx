@@ -9,10 +9,15 @@ import { useToast } from '@/hooks/use-toast';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    businessName: '',
     email: '',
-    projectType: '',
-    message: ''
+    description: '',
+    logo: null as File | null,
+    color1: '#3b82f6',
+    color2: '#ffffff',
+    color3: '#ffffff',
+    color4: '#ffffff',
+    color5: '#ffffff'
   });
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
@@ -22,40 +27,64 @@ const ContactForm = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSelectChange = (value: string) => {
-    setFormData(prev => ({ ...prev, projectType: value }));
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
+    setFormData(prev => ({ ...prev, logo: file }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+
+    const data = new FormData();
+    data.append('businessName', formData.businessName);
+    data.append('email', formData.email);
+    data.append('description', formData.description);
+    data.append('color1', formData.color1);
+    data.append('color2', formData.color2);
+    data.append('color3', formData.color3);
+    data.append('color4', formData.color4);
+    data.append('color5', formData.color5);
+
+    if (formData.logo) {
+      data.append('logo', formData.logo);
+    }
+
     try {
-      const response = await fetch('https://hook.us2.make.com/pin6hbf2xsggbt9f8flkgmw19223evam', {
+      const response = await fetch('https://hook.us2.make.com/g9abaj19u2x5uyslhrcmsxzui1taojbf', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        body: data
       });
+
       if (response.ok) {
         toast({
           title: "Message Sent!",
           description: "We'll get back to you within 24 hours.",
           className: "bg-orange-500 bg-opacity-100 text-white"
         });
-        setFormData({ name: '', email: '', projectType: '', message: '' });
+        setFormData({
+          businessName: '',
+          email: '',
+          description: '',
+          logo: null,
+          color1: '#3b82f6',
+          color2: '#ffffff',
+          color3: '#ffffff',
+          color4: '#ffffff',
+          color5: '#ffffff'
+        });
       } else {
         toast({
           title: "Error",
           description: "Failed to send message. Please try again.",
-          variant: "destructive",
+          variant: "destructive"
         });
       }
     } catch (error) {
       toast({
         title: "Error",
         description: "Failed to send message. Please check your connection and try again.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setIsLoading(false);
@@ -77,10 +106,10 @@ const ContactForm = () => {
               Tell us about your project and we'll create a custom automation solution for you.
             </p>
             <p className="text-xl text-cyan-400 font-semibold mt-4">
-            Fill in the key details and we'll send you your automated smart website app within 24 hours. Free 7-day demo. 
-</p>
+              Fill in the key details and we'll send you your automated smart website app within 24 hours. Free 7-day demo. 
+            </p>
           </div>
-
+  
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="bg-card rounded-2xl p-8 border shadow-card-hover">
@@ -97,9 +126,11 @@ const ContactForm = () => {
                     required
                     className="mt-2"
                     placeholder="Enter your business name"
+                    value={formData.businessName}
+                    onChange={handleInputChange}
                   />
                 </div>
-
+  
                 {/* Email */}
                 <div>
                   <Label htmlFor="email" className="text-foreground font-medium">
@@ -112,9 +143,11 @@ const ContactForm = () => {
                     required
                     className="mt-2"
                     placeholder="your@email.com"
+                    value={formData.email}
+                    onChange={handleInputChange}
                   />
                 </div>
-
+  
                 {/* Description */}
                 <div>
                   <Label htmlFor="description" className="text-foreground font-medium">
@@ -125,9 +158,11 @@ const ContactForm = () => {
                     name="description"
                     className="mt-2 min-h-[120px]"
                     placeholder="Describe your product or service..."
+                    value={formData.description}
+                    onChange={handleInputChange}
                   />
                 </div>
-
+  
                 {/* Logo Upload */}
                 <div>
                   <Label htmlFor="logo" className="text-foreground font-medium">
@@ -143,6 +178,7 @@ const ContactForm = () => {
                       name="logo"
                       accept="image/*"
                       className="hidden"
+                      onChange={handleFileChange}
                     />
                     <label
                       htmlFor="logo"
@@ -152,7 +188,7 @@ const ContactForm = () => {
                     </label>
                   </div>
                 </div>
-
+  
                 {/* Color Pickers */}
                 <div>
                   <Label className="text-foreground font-medium mb-4 block">
@@ -169,13 +205,14 @@ const ContactForm = () => {
                           id={`color${index}`}
                           name={`color${index}`}
                           className="w-full h-12 border border-border rounded-lg cursor-pointer bg-background"
-                          defaultValue={index === 1 ? '#3b82f6' : '#ffffff'}
+                          value={formData[`color${index}` as keyof typeof formData] as string}
+                          onChange={handleInputChange}
                         />
                       </div>
                     ))}
                   </div>
                 </div>
-
+  
                 <Button 
                   type="submit"
                   disabled={isLoading}
@@ -190,14 +227,15 @@ const ContactForm = () => {
                     </>
                   )}
                 </Button>
-<div className="flex flex-col justify-center" style={{ minHeight: '120px' }}>
-  <div className="mt-12 text-sm text-muted-foreground text-center border border-border rounded-xl p-4">
-    Our team will review your request and get in touch within 24 hours. Let us help you kickstart your digital transformation!
-  </div>
-</div>
+  
+                <div className="flex flex-col justify-center" style={{ minHeight: '120px' }}>
+                  <div className="mt-12 text-sm text-muted-foreground text-center border border-border rounded-xl p-4">
+                    Our team will review your request and get in touch within 24 hours. Let us help you kickstart your digital transformation!
+                  </div>
+                </div>
               </form>
             </div>
-
+  
             {/* Contact Info */}
             <div className="space-y-8">
               <div className="bg-card rounded-2xl p-8 border">
@@ -223,7 +261,7 @@ const ContactForm = () => {
                   </li>
                 </ul>
               </div>
-
+  
               <div className="bg-gradient-primary rounded-2xl p-8 text-white">
                 <h3 className="font-heading font-semibold text-xl mb-4">
                   Free Initial Consultation
