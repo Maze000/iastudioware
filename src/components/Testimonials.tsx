@@ -82,7 +82,7 @@ const Testimonials = () => {
 
         {/* Trust Indicators */}
         <div className="mt-16 text-center">
-          <p className="text-muted-foreground mb-8">Trusted by 100+ businesses across Latin America</p>
+          <p className="text-muted-foreground mb-8">Trusted by 100+ businesses around the world.</p>
           
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
             {/* Mock Company Logos */}

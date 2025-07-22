@@ -8,7 +8,7 @@ const PricingPlans = () => {
       title: 'Basic Plan',
       subtitle: 'Digital Presence',
       description: 'Perfect for getting started with a professional online presence',
-      price: '$100 - $150 NZD',
+      price: '$100 - $150 USD',
       popular: false,
       features: [
         'Professional landing page',
@@ -24,7 +24,7 @@ const PricingPlans = () => {
       title: 'Intermediate Plan',
       subtitle: 'Website + Automation',
       description: 'Scale your business with smart automations and integrations',
-      price: '$160 - $200 NZD',
+      price: '$160 - $200 USD',
       popular: true,
       features: [
         'Full website (5–10 pages)',
@@ -42,7 +42,7 @@ const PricingPlans = () => {
       title: 'Advanced Plan',
       subtitle: 'eCommerce + Apps + AI',
       description: 'Complete digital transformation with AI-powered solutions',
-      price: '$210 - $300 NZD',
+      price: '$210 - $300 USD',
       popular: false,
       features: [
         'Full online store with cart & checkout',
@@ -60,7 +60,7 @@ const PricingPlans = () => {
       title: 'Monthly Plan',
       subtitle: 'Marketing & Support Retainer',
       description: 'Ongoing optimization and marketing support',
-      price: '$320 - $450 NZD',
+      price: '$320 - $450 USD',
       popular: false,
       features: [
         'Paid ads (Meta, Google, TikTok)',
