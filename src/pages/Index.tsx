@@ -7,6 +7,7 @@ import Portfolio from '@/components/Portfolio';
 import ContactForm from '@/components/ContactForm';
 import Benefits from '@/components/Benefits';
 import Testimonials from '@/components/Testimonials';
+import FloatingTechIcons from '@/components/FloatingTechIcons';
 import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
 
@@ -22,6 +23,7 @@ const Index = () => {
       <ContactForm />
       <Benefits />
       <Testimonials />
+      <FloatingTechIcons />
       <FinalCTA />
       <Footer />
     </div>
