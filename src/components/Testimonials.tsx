@@ -39,7 +39,7 @@ const Testimonials = () => {
             </span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Real results from businesses that chose to digitize with AI Studio
+            Real results from businesses that chose to digitize with AI Warestudio
           </p>
         </div>
 

@@ -112,7 +112,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
             <div className="text-white/60 text-sm">
-              © 2025 AI Studio. All rights reserved.
+              © 2025 AI Warestudio. All rights reserved.
             </div>
 
             {/* Social Links */}

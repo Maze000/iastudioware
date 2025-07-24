@@ -18,8 +18,8 @@ export default defineConfig(({ mode }) => ({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
       manifest: {
-        name: 'IA Studio',
-        short_name: 'IA Studio',
+        name: 'AI Warestudio',
+        short_name: 'AI Warestudio',
         description: 'Plataforma de inteligencia artificial para crear contenido',
         theme_color: '#000000',
         background_color: '#ffffff',
