@@ -12,7 +12,15 @@ const MonthlyPlanPayment = () => {
         <div className="mb-8">
           <Button
             variant="ghost"
-            onClick={() => navigate('/')}
+            onClick={() => {
+              navigate('/');
+              setTimeout(() => {
+                const plansSection = document.getElementById('plans');
+                if (plansSection) {
+                  plansSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }, 100);
+            }}
             className="text-white hover:text-blue-400 mb-4"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
