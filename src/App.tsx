@@ -12,6 +12,7 @@ import BasicPlanPayment from "./pages/BasicPlanPayment";
 import IntermediatePlanPayment from "./pages/IntermediatePlanPayment";
 import AdvancedPlanPayment from "./pages/AdvancedPlanPayment";
 import MonthlyPlanPayment from "./pages/MonthlyPlanPayment";
+import Game from "./pages/Game";
 
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/game" element={<Game />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/support" element={<Support />} />
