@@ -8,6 +8,10 @@ import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/Privacy";
 import TermsOfService from "./pages/Terms";
 import Support from "./pages/Support";
+import BasicPlanPayment from "./pages/BasicPlanPayment";
+import IntermediatePlanPayment from "./pages/IntermediatePlanPayment";
+import AdvancedPlanPayment from "./pages/AdvancedPlanPayment";
+import MonthlyPlanPayment from "./pages/MonthlyPlanPayment";
 
 
 const queryClient = new QueryClient();
@@ -23,6 +27,10 @@ const App = () => (
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/support" element={<Support />} />
+          <Route path="/basic-plan-payment" element={<BasicPlanPayment />} />
+          <Route path="/intermediate-plan-payment" element={<IntermediatePlanPayment />} />
+          <Route path="/advanced-plan-payment" element={<AdvancedPlanPayment />} />
+          <Route path="/monthly-plan-payment" element={<MonthlyPlanPayment />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

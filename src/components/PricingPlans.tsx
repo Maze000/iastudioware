@@ -1,14 +1,16 @@
 import { Button } from '@/components/ui/button';
 import { Check, Star, Zap, Rocket, Headphones } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const PricingPlans = () => {
+  const navigate = useNavigate();
   const plans = [
     {
       icon: Star,
       title: 'Basic Plan',
       subtitle: 'Digital Presence',
       description: 'Perfect for getting started with a professional online presence',
-      price: '$100 - $149 NZD',
+      price: '$149 NZD',
       popular: false,
       features: [
         'Professional landing page',
@@ -24,7 +26,7 @@ const PricingPlans = () => {
       title: 'Intermediate Plan',
       subtitle: 'Website + Automation',
       description: 'Scale your business with smart automations and integrations',
-      price: '$160 - $200 NZD',
+      price: '$200 NZD',
       popular: true,
       features: [
         'Full website (5–10 pages)',
@@ -42,7 +44,7 @@ const PricingPlans = () => {
       title: 'Advanced Plan',
       subtitle: 'eCommerce + Apps + AI',
       description: 'Complete digital transformation with AI-powered solutions',
-      price: '$210 - $300 NZD',
+      price: '$300 NZD',
       popular: false,
       features: [
         'Full online store with cart & checkout',
@@ -60,7 +62,7 @@ const PricingPlans = () => {
       title: 'Monthly Plan',
       subtitle: 'Marketing & Support Retainer',
       description: 'Ongoing optimization and marketing support',
-      price: '$320 - $450 NZD',
+      price: '$450 NZD',
       popular: false,
       features: [
         'Paid ads (Meta, Google, TikTok)',
@@ -144,6 +146,20 @@ const PricingPlans = () => {
                     ? 'bg-primary hover:bg-primary-hover text-primary-foreground' 
                     : 'bg-secondary hover:bg-secondary/90 text-secondary-foreground'
                 } font-medium`}
+                onClick={() => {
+                  if (plan.title === 'Basic Plan') {
+                    navigate('/basic-plan-payment');
+                  } else if (plan.title === 'Intermediate Plan') {
+                    navigate('/intermediate-plan-payment');
+                  } else if (plan.title === 'Advanced Plan') {
+                    navigate('/advanced-plan-payment');
+                  } else if (plan.title === 'Monthly Plan') {
+                    navigate('/monthly-plan-payment');
+                  } else {
+                    // Para otros planes, puedes agregar lógica adicional aquí
+                    console.log(`Selected plan: ${plan.title}`);
+                  }
+                }}
               >
                 Get Started
               </Button>
