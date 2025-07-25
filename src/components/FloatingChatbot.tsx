@@ -11,6 +11,7 @@ interface Message {
 
 const FloatingChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
@@ -108,8 +109,20 @@ const FloatingChatbot = () => {
   return (
     <div className="fixed bottom-6 right-6 z-50">
       {/* Chat Window */}
-      {isOpen && (
-        <div className="mb-4 w-80 h-96 bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden animate-in slide-in-from-bottom-2 duration-300">
+      {(isOpen || isAnimating) && (
+        <div className={`mb-4 w-80 h-96 bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden transition-all duration-500 transform ${
+          isOpen 
+            ? 'translate-y-0 scale-100 opacity-100 rotate-0' 
+            : 'translate-y-8 scale-95 opacity-0 rotate-1'
+        }`}
+        style={{
+          animation: isOpen 
+            ? 'slideInUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)' 
+            : 'slideOutDown 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53)'
+        }}
+        onAnimationEnd={() => {
+          if (!isOpen) setIsAnimating(false);
+        }}>
           {/* Header */}
           <div className="bg-gradient-to-r from-orange-500 to-violet-600 text-white p-4 flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -177,23 +190,124 @@ const FloatingChatbot = () => {
 
       {/* Floating Button */}
       <Button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`w-14 h-14 rounded-full shadow-lg transition-all duration-300 ${
+        onClick={() => {
+          if (isOpen) {
+            setIsAnimating(true);
+            setIsOpen(false);
+          } else {
+            setIsOpen(true);
+            setIsAnimating(true);
+          }
+        }}
+        className={`w-14 h-14 rounded-full shadow-lg transition-all duration-500 transform hover:scale-110 active:scale-95 ${
           isOpen
-            ? 'bg-red-500 hover:bg-red-600'
-            : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'
-        } text-white border-0 flex items-center justify-center group`}
+            ? 'bg-red-500 hover:bg-red-600 rotate-180 shadow-red-500/30'
+            : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rotate-0 shadow-blue-500/30 hover:shadow-purple-500/40'
+        } text-white border-0 flex items-center justify-center group animate-bounce-subtle`}
+        style={{
+          animation: isOpen ? 'spin-in 0.5s ease-out' : 'bounce-in 0.6s ease-out'
+        }}
       >
         {isOpen ? (
-          <X className="w-6 h-6" />
+          <X className={`w-6 h-6 transition-all duration-300 transform ${
+            isOpen ? 'rotate-180 scale-110' : 'rotate-0 scale-100'
+          }`} />
         ) : (
           <div className="relative">
-            <Bot className="w-6 h-6 group-hover:scale-110 transition-transform" />
-            {/* Online indicator */}
-            <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white animate-pulse"></div>
+            <Bot className="w-6 h-6 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300 transform" />
+            {/* Enhanced Online indicator */}
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white animate-pulse shadow-lg shadow-green-400/50"></div>
+            {/* Ripple effect */}
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400/30 rounded-full animate-ping"></div>
           </div>
         )}
       </Button>
+      
+      {/* Custom CSS for animations */}
+      <style jsx>{`
+        @keyframes spin-in {
+          0% {
+            transform: rotate(0deg) scale(0.8);
+            opacity: 0.8;
+          }
+          50% {
+            transform: rotate(90deg) scale(1.1);
+          }
+          100% {
+            transform: rotate(180deg) scale(1);
+            opacity: 1;
+          }
+        }
+        
+        @keyframes bounce-in {
+          0% {
+            transform: scale(0.3) rotate(0deg);
+            opacity: 0;
+          }
+          50% {
+            transform: scale(1.05) rotate(-5deg);
+          }
+          70% {
+            transform: scale(0.9) rotate(2deg);
+          }
+          100% {
+            transform: scale(1) rotate(0deg);
+            opacity: 1;
+          }
+        }
+        
+        .animate-bounce-subtle {
+          animation: subtle-bounce 2s infinite;
+        }
+        
+        @keyframes subtle-bounce {
+          0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+          }
+          40% {
+            transform: translateY(-2px);
+          }
+          60% {
+            transform: translateY(-1px);
+          }
+        }
+        
+        @keyframes slideInUp {
+          0% {
+            transform: translateY(100%) scale(0.8) rotate(5deg);
+            opacity: 0;
+            filter: blur(4px);
+          }
+          50% {
+            transform: translateY(-10%) scale(1.02) rotate(-1deg);
+            opacity: 0.8;
+            filter: blur(1px);
+          }
+          100% {
+            transform: translateY(0) scale(1) rotate(0deg);
+            opacity: 1;
+            filter: blur(0px);
+          }
+        }
+        
+        @keyframes slideOutDown {
+          0% {
+            transform: translateY(0) scale(1) rotate(0deg);
+            opacity: 1;
+            filter: blur(0px);
+          }
+          50% {
+            transform: translateY(20%) scale(0.95) rotate(2deg);
+            opacity: 0.5;
+            filter: blur(2px);
+          }
+          100% {
+            transform: translateY(100%) scale(0.8) rotate(-3deg);
+            opacity: 0;
+            filter: blur(4px);
+          }
+        }
+      `}</style>
     </div>
   );
 };
