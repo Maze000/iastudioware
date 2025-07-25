@@ -10,6 +10,7 @@ import Testimonials from '@/components/Testimonials';
 import FloatingTechIcons from '@/components/FloatingTechIcons';
 import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
+import FloatingChatbot from '@/components/FloatingChatbot';
 
 const Index = () => {
   return (
@@ -26,6 +27,7 @@ const Index = () => {
       <FloatingTechIcons />
       <FinalCTA />
       <Footer />
+      <FloatingChatbot />
     </div>
   );
 };

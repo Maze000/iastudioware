@@ -126,7 +126,7 @@ const AdvancedPlanPayment = () => {
                     src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg"
                     alt="cards"
                   />
-                  <section style={{ fontSize: '0.75rem' }}>
+                  <section style={{ fontSize: '0.75rem', color: 'white' }}>
                     Powered by{' '}
                     <img
                       src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg"
