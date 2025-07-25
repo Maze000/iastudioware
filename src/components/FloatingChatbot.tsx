@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { X, Send, Bot, MessageCircle } from 'lucide-react';
-
+import 'styled-jsx';
 interface Message {
   id: string;
   text: string;
@@ -172,7 +172,7 @@ const FloatingChatbot = () => {
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
-                onKeyPress={handleKeyPress}
+                onKeyDown={handleKeyPress}
                 placeholder="Type your message..."
                 className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm bg-white placeholder-gray-500"
               />
