@@ -14,7 +14,7 @@ const FloatingChatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: 'Hi! 👋 I\'m your IA WareStudio virtual assistant. How can I help you today?',
+      text: 'Hi! 👋 I\'m your AI WareStudio virtual assistant. How can I help you today?',
       isBot: true,
       timestamp: new Date()
     }
@@ -117,7 +117,7 @@ const FloatingChatbot = () => {
                 <Bot className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="font-semibold text-sm">IA WareStudio Assistant</h3>
+                <h3 className="font-semibold text-sm">AI WareStudio Assistant</h3>
                 <p className="text-xs opacity-90">Online</p>
               </div>
             </div>
