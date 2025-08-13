@@ -51,7 +51,7 @@ const AdvancedPlanPayment = () => {
             </div>
 
             <div>
-              <div className="text-2xl font-bold text-white">$300 NZD</div>
+              <div className="text-2xl font-bold text-white">$300 USD</div>
               <p className="text-muted-foreground text-sm">
                 Complete digital transformation with AI-powered solutions
               </p>
