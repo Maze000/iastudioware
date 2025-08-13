@@ -51,7 +51,7 @@ const MonthlyPlanPayment = () => {
             </div>
 
             <div>
-              <div className="text-2xl font-bold text-white">$450 NZD</div>
+              <div className="text-2xl font-bold text-white">$450 USD</div>
               <p className="text-muted-foreground text-sm">
                 Ongoing optimization and marketing support
               </p>
