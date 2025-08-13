@@ -51,7 +51,7 @@ const BasicPlanPayment = () => {
             </div>
 
             <div>
-              <div className="text-2xl font-bold text-white">$149 NZD</div>
+              <div className="text-2xl font-bold text-white">$149 USD</div>
               <p className="text-muted-foreground text-sm">
                 Perfect to get started with a sleek, professional online presence
               </p>
