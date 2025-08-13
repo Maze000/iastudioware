@@ -51,7 +51,7 @@ const IntermediatePlanPayment = () => {
             </div>
 
             <div>
-              <div className="text-2xl font-bold text-white">$200 NZD</div>
+              <div className="text-2xl font-bold text-white">$200 USD</div>
               <p className="text-muted-foreground text-sm">
                 Scale your business with smart automations and integrations
               </p>
